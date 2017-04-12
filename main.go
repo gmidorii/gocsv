@@ -29,6 +29,7 @@ func main() {
 	}
 
 	csv := csv.NewReader(f)
+	records := make([][]string, 0)
 	for {
 		record, err := csv.Read()
 		if err == io.EOF {
@@ -39,16 +40,20 @@ func main() {
 		}
 
 		if contains(record, *grep) {
+			rs := make([]string, len(nums))
 			for i, r := range record {
-				for _, num := range nums {
+				for j, num := range nums {
 					if i == num {
-						fmt.Print(r + ",")
+						rs[j] = r
 					}
 				}
 			}
-			fmt.Println()
+			records = append(records, rs)
+			fmt.Println(records)
 		}
 	}
+
+	calc(records)
 }
 
 func contains(iter []string, str string) bool {
