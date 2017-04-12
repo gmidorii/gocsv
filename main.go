@@ -3,7 +3,6 @@ package main
 import (
 	"encoding/csv"
 	"flag"
-	"fmt"
 	"io"
 	"log"
 	"os"
@@ -12,9 +11,9 @@ import (
 )
 
 func main() {
-	file := flag.String("f", "files.csv", "read file")
+	file := flag.String("f", "file.csv", "read file")
 	grep := flag.String("g", "", "grep conditions")
-	cut := flag.String("c", "1", "output field colum num. delimiter :")
+	cut := flag.String("c", "1:2", "output field colum num. delimiter :")
 	flag.Parse()
 
 	fields := strings.Split(*cut, ":")
@@ -49,7 +48,6 @@ func main() {
 				}
 			}
 			records = append(records, rs)
-			fmt.Println(records)
 		}
 	}
 
