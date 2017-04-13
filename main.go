@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/csv"
 	"flag"
+	"fmt"
 	"io"
 	"log"
 	"os"
@@ -51,12 +52,13 @@ func main() {
 		}
 	}
 
-	calc(records)
+	conv := calc(records)
+	fmt.Print(*grep + " " + conv)
 }
 
 func contains(iter []string, str string) bool {
 	for _, v := range iter {
-		if strings.Contains(v, str) {
+		if caseInsenstiveContains(v, str) {
 			return true
 		}
 	}
@@ -73,4 +75,8 @@ func strToIntSlice(iter []string) ([]int, error) {
 		nums[i] = num
 	}
 	return nums, nil
+}
+
+func caseInsenstiveContains(a, b string) bool {
+	return strings.Contains(strings.ToUpper(a), strings.ToUpper(b))
 }

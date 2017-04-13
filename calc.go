@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-func calc(iter [][]string) {
+func calc(iter [][]string) string {
 	// Dependent processing
 	var sum int
 	var cov int
@@ -17,5 +17,5 @@ func calc(iter [][]string) {
 		cov = cov + comp
 	}
 
-	fmt.Println(strconv.FormatFloat((float64(cov)/float64(sum))*100, 'f', 2, 64) + "%")
+	return fmt.Sprintln(strconv.FormatFloat((float64(cov)/float64(sum))*100, 'f', 2, 64))
 }
