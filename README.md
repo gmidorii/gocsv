@@ -11,7 +11,9 @@ https://github.com/midorigreen/gocsv/releases/tag/v0.1
 ```
 
 ### go run
+```
 % ./gocsv -c 3:4 -f jacoco.csv -g [search word]
+```
 
 ## Shell Script
 ```
