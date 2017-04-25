@@ -41,6 +41,7 @@ func main() {
 
 		if contains(record, *grep) {
 			rs := make([]string, len(nums))
+			// extract only cut param column
 			for i, r := range record {
 				for j, num := range nums {
 					if i == num {
