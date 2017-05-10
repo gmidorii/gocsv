@@ -18,5 +18,5 @@ https://github.com/midorigreen/gocsv/releases/tag/v0.1
 ## Shell Script
 ```
 # ver jacoco.csv
-% sh jacoco.sh [file: word row]
+% sh jacoco.sh [file: search word row] [csv file]
 ```
