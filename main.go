@@ -14,7 +14,7 @@ import (
 func main() {
 	file := flag.String("f", "file.csv", "read file")
 	grep := flag.String("g", "", "grep conditions")
-	cut := flag.String("c", "1:2", "output field colum num. delimiter :")
+	cut := flag.String("c", "3:4", "output field colum num. delimiter :")
 	flag.Parse()
 
 	fields := strings.Split(*cut, ":")
